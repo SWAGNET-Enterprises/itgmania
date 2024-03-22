@@ -235,11 +235,7 @@ bool ScreenSyncOverlay::Input( const InputEventPlus &input )
 	case ChangeSongOffset:
 		{
 			float fDelta = bIncrease? +0.02f:-0.02f;
-			if( INPUTFILTER->IsBeingPressed( DeviceInput(DEVICE_KEYBOARD, KEY_RALT)) ||
-				INPUTFILTER->IsBeingPressed( DeviceInput(DEVICE_KEYBOARD, KEY_LALT)) )
-			{
-				fDelta /= 20; /* 1ms */
-			}
+			fDelta /= 20; /* 1ms */
 			switch( input.type )
 			{
 				case IET_RELEASE:	fDelta *= 0;	break;
